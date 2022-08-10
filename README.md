@@ -18,7 +18,7 @@
 <br>
 <br>
 
-#### MW30P X-To-Earn Interface API
+### MW30P X-To-Earn Interface API
 API는 성능을 고려하여 Sync 타입과 Async 타입으로 분류됩니다. 제휴사는 각 API에 해당되는 기능을 적용하며 JSON, C/C++, JAVA등 다양한 개발언어를 지원합니다.
 ##### Go MW30P X-to-Earn API Guide(https://github.com/mw30p/verseB_pie_xtoearn_json_api-kr/tree/main/src).
 
@@ -41,5 +41,3 @@ X-To-Earn and Profit in Everything
 |Withdrawal pre-trade|Partners|MW30P|인출 예비 거래||
 |Withdrawal|Partners|MW30P|인출 가능 토큰(PlayToken 등)을 외부 주소로 인출|Async|
 |Block Notify|MW30P|Partners|Exchange API, Withdrawal API의 블록체인 처리 결과 전송<br>(Confirm 완료 여부)|Async|
-
-
