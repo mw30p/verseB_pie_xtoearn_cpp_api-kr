@@ -12,16 +12,14 @@
 #define URL_EXRATE_TEST		"http://tversegeo.verseb.io:8180/api/ExRate.json"
 #define URL_EXREQ_TEST		"http://tversegeo.verseb.io:8180/api/ExReq.json"
 #define URL_OUTADDR_TEST	"http://tversegeo.verseb.io:8180/api/OutAddrVerify.json"
-#define URL_PASSPORT_TEST	"http://tversegeo.verseb.io:8180/api/RegOutPassword.json"
-#define URL_PRETRADE_TEST	"http://tversegeo.verseb.io:8180/api/Reqpretrade.json"
+#define URL_OUTPWD_TEST		"http://tversegeo.verseb.io:8180/api/RegOutPassword.json"
 #define URL_WITHDRAW_TEST	"http://tversegeo.verseb.io:8180/api/ReqWithdraw.json"
 
 /* DEFINE URL REAL */
 #define URL_EXRATE_REAL		"https://versegeo.verseb.io/api/ExRate.json"
 #define URL_EXREQ_REAL		"https://versegeo.verseb.io/api/ExReq.json"
 #define URL_OUTADDR_REAL	"https://versegeo.verseb.io/api/OutAddrVerify.json"
-#define URL_PASSPORT_REAL	"https://versegeo.verseb.io/api/RegOutPassword.json"
-#define URL_PRETRADE_REAL	"https://versegeo.verseb.io/api/Reqpretrade.json"
+#define URL_OUTPWD_REAL		"https://versegeo.verseb.io/api/RegOutPassword.json"
 #define URL_WITHDRAW_REAL	"https://versegeo.verseb.io/api/ReqWithdraw.json"
 
 /* DEFINE KEY NAME */
@@ -45,14 +43,6 @@
 #define	KEY_txId			"txId"
 #define	KEY_outAddress		"outAddress"
 #define	KEY_outPassword		"outPassword"
-#define	KEY_PassportOption	"PassportOption"
-#define	KEY_newPassword		"newPassword"
-#define	KEY_Papers			"Papers"
-#define KEY_withdrawalRate	"withdrawalRate"
-#define KEY_withdrawalFee	"withdrawalFee"
-#define KEY_withdrawalAmount	"withdrawalAmount"
-#define KEY_ReserveWID		"ReserveWID"
-#define KEY_pinNumber		"pinNumber"
 
 /* DEFINE FIELD SIZE */
 #define MERCHANT_ID_SZ			50+1
@@ -76,13 +66,5 @@
 #define TX_ID_SZ				128+1
 #define OUT_ADDRESS_SZ			128+1
 #define OUT_PASSWORD_SZ			192+1
-#define PASSPORT_OPTION_SZ		32+1
-#define NEW_PASSWORD_SZ			192+1
-#define PAPERS_SZ				192+1
-#define WITHDRAWAL_RATE_SZ		20+1
-#define WITHDRAWAL_FEE_SZ		20+1
-#define WITHDRAWAL_AMOUNT_SZ	20+1
-#define RESERVE_WID_SZ			192+1
-#define PIN_NUMBER_SZ			6+1
 
 #endif /* INCLUDE_CONSTS_H_ */
