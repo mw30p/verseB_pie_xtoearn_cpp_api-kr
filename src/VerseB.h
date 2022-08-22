@@ -44,6 +44,8 @@ typedef struct exchangeReq_IN {
 	char	toCurrency[TO_CURRENCY_SZ];
 	char	fromAmount[FROM_AMOUNT_SZ];
 	char	exchangeRate[EXCHANGE_RATE_SZ];
+	char	outPassword[OUT_PASSWORD_SZ];
+	char	Papers[PAPERS_SZ];
 	char	notifyUrl[NOTIFY_URL_SZ];
 	char	key[KEY_SZ];
 	char	initialVector[INITIAL_VECTOR_SZ];
@@ -71,6 +73,8 @@ typedef struct outAddrVerify_IN {
 	char	merchantSiteId[MERCHANT_SITE_ID_SZ];
 	char	customerId[CUSTOMER_ID_SZ];
 	char	outAddress[OUT_ADDRESS_SZ];
+	char	outPassword[OUT_PASSWORD_SZ];
+	char	Papers[PAPERS_SZ];
 	char	key[KEY_SZ];
 	char	initialVector[INITIAL_VECTOR_SZ];
 } outAddr_IN;
@@ -86,35 +90,77 @@ typedef struct outAddrVerify_OUT {
 	char	reason[REASON_SZ];
 } outAddr_OUT;
 
-typedef struct regOutPassword_IN {
+typedef struct passport_IN {
 	char	merchantId[MERCHANT_ID_SZ];
 	char	merchantSiteId[MERCHANT_SITE_ID_SZ];
 	char	customerId[CUSTOMER_ID_SZ];
-	char	outAddress[OUT_ADDRESS_SZ];
+	char	PassportOption[PASSPORT_OPTION_SZ];
 	char	outPassword[OUT_PASSWORD_SZ];
+	char	newPassword[NEW_PASSWORD_SZ];
+	char	Papers[PAPERS_SZ];
 	char	key[KEY_SZ];
 	char	initialVector[INITIAL_VECTOR_SZ];
-} outPwd_IN;
+} pass_IN;
 
-typedef struct regOutPassword_OUT {
+typedef struct passport_OUT {
 	char	merchantId[MERCHANT_ID_SZ];
 	char	merchantSiteId[MERCHANT_SITE_ID_SZ];
 	char	code[CODE_SZ];
 	char	customerId[CUSTOMER_ID_SZ];
+	char	Papers[PAPERS_SZ];
 	char	status[STATUS_SZ];
 	char	errCd[ERR_CD_SZ];
 	char	reason[REASON_SZ];
-} outPwd_OUT;
+} pass_OUT;
+
+typedef struct reqPreTrade_IN {
+	char	merchantId[MERCHANT_ID_SZ];
+	char	merchantSiteId[MERCHANT_SITE_ID_SZ];
+	char	code[CODE_SZ];
+	char	customerId[CUSTOMER_ID_SZ];
+	char	fromCurrency[FROM_CURRENCY_SZ];
+	char	toCurrency[TO_CURRENCY_SZ];
+	char	fromAmount[FROM_AMOUNT_SZ];
+	char	key[KEY_SZ];
+	char	initialVector[INITIAL_VECTOR_SZ];
+} preTrade_IN;
+
+typedef struct reqPreTrade_OUT {
+	char	merchantId[MERCHANT_ID_SZ];
+	char	merchantSiteId[MERCHANT_SITE_ID_SZ];
+	char	code[CODE_SZ];
+	char	customerId[CUSTOMER_ID_SZ];
+	char	outAddress[OUT_ADDRESS_SZ];
+	char	fromCurrency[FROM_CURRENCY_SZ];
+	char	toCurrency[TO_CURRENCY_SZ];
+	char	fromAmount[FROM_AMOUNT_SZ];
+	char	withdrawalRate[WITHDRAWAL_RATE_SZ];
+	char	toAmount[TO_AMOUNT_SZ];
+	char	withdrawalFee[WITHDRAWAL_FEE_SZ];
+	char	withdrawalAmount[WITHDRAWAL_AMOUNT_SZ];
+	char	ReserveWID[RESERVE_WID_SZ];
+	char	pinNumber[PIN_NUMBER_SZ];
+	char	status[STATUS_SZ];
+	char	errCd[ERR_CD_SZ];
+	char	reason[REASON_SZ];
+} preTrade_OUT;
 
 typedef struct reqWithdraw_IN {
 	char	merchantId[MERCHANT_ID_SZ];
 	char	merchantSiteId[MERCHANT_SITE_ID_SZ];
 	char	customerId[CUSTOMER_ID_SZ];
 	char	outAddress[OUT_ADDRESS_SZ];
-	char	outPassword[OUT_PASSWORD_SZ];
 	char	fromCurrency[FROM_CURRENCY_SZ];
 	char	toCurrency[TO_CURRENCY_SZ];
 	char	fromAmount[FROM_AMOUNT_SZ];
+	char	withdrawalRate[WITHDRAWAL_RATE_SZ];
+	char	toAmount[TO_AMOUNT_SZ];
+	char	withdrawalFee[WITHDRAWAL_FEE_SZ];
+	char	withdrawalAmount[WITHDRAWAL_AMOUNT_SZ];
+	char	ReserveWID[RESERVE_WID_SZ];
+	char	pinNumber[PIN_NUMBER_SZ];
+	char	outPassword[OUT_PASSWORD_SZ];
+	char	Papers[PAPERS_SZ];
 	char	notifyUrl[NOTIFY_URL_SZ];
 	char	key[KEY_SZ];
 	char	initialVector[INITIAL_VECTOR_SZ];
@@ -129,8 +175,10 @@ typedef struct reqWithdraw_OUT {
 	char	fromCurrency[FROM_CURRENCY_SZ];
 	char	toCurrency[TO_CURRENCY_SZ];
 	char	fromAmount[FROM_AMOUNT_SZ];
+	char	withdrawalRate[WITHDRAWAL_RATE_SZ];
 	char	toAmount[TO_AMOUNT_SZ];
-	char	exchangeRate[EXCHANGE_RATE_SZ];
+	char	withdrawalFee[WITHDRAWAL_FEE_SZ];
+	char	withdrawalAmount[WITHDRAWAL_AMOUNT_SZ];
 	char	txId[TX_ID_SZ];
 	char	status[STATUS_SZ];
 	char	errCd[ERR_CD_SZ];
@@ -142,7 +190,8 @@ extern int iMode;
 int exRate(exRate_IN *in,			exRate_OUT *out);
 int exReq(exReq_IN *in,				exReq_OUT *out);
 int outAddr(outAddr_IN *in,			outAddr_OUT *out);
-int outPwd(outPwd_IN *in,			outPwd_OUT *out);
+int Passport(pass_IN *in,			pass_OUT *out);
+int reqPreTrade(preTrade_IN *in,		preTrade_OUT *out);
 int reqWithdraw(reqWdraw_IN *in,	reqWdraw_OUT *out);
 
 #endif /* INCLUDE_VERSEB_H_ */
